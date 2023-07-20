@@ -30,6 +30,7 @@ window.onload = function() {
 }
 
 function initialize() {
+    document.getElementById('author').innerText = 'Made by Thomas Fanelli\n(contact: dev.jumble@gmail.com)'
 
     // set up info button
     document.getElementById("info-btn").addEventListener("click", function () {
@@ -55,13 +56,22 @@ function initialize() {
     setLetterFreq();
 
     let shuffleKey = document.getElementById("Shuffle");
-    shuffleKey.addEventListener("click", shuffleKeyboard);
+    shuffleKey.addEventListener("click", function() {
+        makeActive(shuffleKey);
+        processKeyClick();
+    });
 
     let deleteKey = document.getElementById("Backspace");
-    deleteKey.addEventListener("click", processKeyClick);
+    deleteKey.addEventListener("click", function() {
+        makeActive(deleteKey);
+        processKeyClick();
+    });
 
     let enterKey = document.getElementById("Enter");
-    enterKey.addEventListener("click", processKeyClick);
+    enterKey.addEventListener("click", function() {
+        makeActive(enterKey);
+        processKeyClick();
+    });
 
     // Listen for Key Press
     document.addEventListener("keyup", (e) => {
@@ -132,7 +142,10 @@ function generateKeyboard() {
         tile.classList.add("key");
         tile.classList.add("letter");
         tile.innerText = letters.charAt(i);
-        tile.addEventListener("click", processKeyClick);
+        tile.addEventListener("click", function() {
+            makeActive(tile);
+            processKeyClick();
+        });
         document.getElementById("keyboard-letters").appendChild(tile);
     }
 }
@@ -272,9 +285,9 @@ function endGame() {
     clearInterval(timer);
     document.getElementById("keyboard").innerHTML = ""; 
     if (minutes > 0) {
-        document.getElementById("gameOver").innerText = "Well done! You completed today's puzzle in " + minutes + " minute" + (minutes > 1 ? "s" : "") + " and  " + seconds + " second" + (seconds != 1 ? "s." : ".") + "\nShare your results and play again tomorrow!";
+        document.getElementById("gameOver").innerText = "Well done! You completed today's puzzle in " + minutes + " minute" + (minutes > 1 ? "s" : "") + " and  " + seconds + " second" + (seconds != 1 ? "s." : ".") + "\n\nShare your results and play again tomorrow!";
     } else {
-        document.getElementById("gameOver").innerText = "Wow! You completed today's puzzle in just " + seconds + " second" + (seconds != 1 ? "s." : ".") + "\nShare your results and play again tomorrow!";
+        document.getElementById("gameOver").innerText = "Wow! You completed today's puzzle in just " + seconds + " second" + (seconds != 1 ? "s." : ".") + "\n\nShare your results and play again tomorrow!";
     }
     
     document.getElementById("fourLetterWord").innerText = '';
@@ -378,4 +391,14 @@ function updateTimer() {
         clearInterval(timer);
         document.getElementById("gameOver").innerText = "Wow, you've been here for over 24 hours! Refresh the page to play again."
     }
+}
+
+function makeActive(element) {
+    element.classList.add('active');
+    setTimeout(function() {
+        requestAnimationFrame(() => {
+            element.classList.remove('active');
+        });
+    }
+    , 50);
 }

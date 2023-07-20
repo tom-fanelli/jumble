@@ -38,14 +38,8 @@ body {
     font-size: 30px;
 }
 
-@media screen and (max-width: 550px) {
-    #title {
-        font-size: 28px;
-    }
-
-    #timer {
-        font-size: 20px;
-    }
+.word {
+    font-size: 30px;
 }
 
 hr {
@@ -54,16 +48,51 @@ hr {
     border-radius: 3px;
 }
 
-h1 {
-    
+.board-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 300px;
+}
+
+.keyboard-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 12px;
+    padding-right: 12px;
+    padding-top: 10px;
+}
+
+.letters-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.word-container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+.actions-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
 }
 
 h2 {
     font-size: 36px;
     font-weight: bold;
-    letter-spacing: 10px;
-    margin-bottom: 5px;
-    margin-top: 15px;
+    margin: 0 auto;
 }
 
 .slots {
@@ -109,7 +138,7 @@ h2 {
 }
 
 .active {
-    background-color: rgb(170, 170, 170);
+    opacity: 0.8;
 }
 
 .tile.key {
@@ -133,10 +162,6 @@ h2 {
     user-select: none;
 }
 
-.tile.key:hover, .tile.key:active {
-    opacity: 0.8;
-}
-
 .special-key {
     width: 150px;
     border-radius: 10px;
@@ -144,16 +169,11 @@ h2 {
     color: gainsboro;
 }
 
-.special-key:hover, .special-key:active {
-    opacity: 0.8;
-}
+
 
 #Enter {
     width: 120px;
-}
-
-#keyboard {
-    margin-top: 15px;
+    height: 60px;
 }
 
 .correct {
@@ -229,7 +249,7 @@ h2 {
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.7);
-    position: absolute;
+    position: fixed;
     top: 0;
     display: flex;
     justify-content: center;
@@ -237,14 +257,20 @@ h2 {
     display: none;
 }
 
+.modal-outer {
+    margin: 20px;
+}
+
 .modal-content {
-    width: 500px;
-    height: 300px;
+    position: relative;
+    max-width: 500px; /* Use max-width instead of width */
+    width: 90%; /* Optional: set a default width to ensure it's not too small on wide screens */
     background-color: rgb(50, 50, 50);
     border-radius: 5px;
     border: 1px solid azure;
-    position: relative;
+    padding: 20px; /* Add padding to create space between the content and the modal edges */
 }
+
 
 p {
     margin-left: 10px;
@@ -258,11 +284,6 @@ p {
     font-size: 42;
     transform: rotate(45deg);
     cursor: pointer;
-}
-
-
-.rounded-button:hover, .rounded-button:active, #share-results:hover, #share-results:active {
-    opacity: 0.7;
 }
 
 #made-by {
@@ -303,32 +324,77 @@ p {
     display: flex;
     justify-content: center;
     align-items: center;
-  }
-  
-  .left-element {
-    margin-right: 15px; 
-  }
-  
-  .right-element {
-    margin-left: 15px; 
-  }
+}
 
-  footer {
+.left-element {
+    margin-right: 15px; 
+}
+
+.right-element {
+    margin-left: 15px; 
+}
+
+#author {
     font-family: monospace;
-    font-size: 14px;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 25px;
-    display: flex;
-  }
-  
-  .left-footnote {
-    margin-left: 10px;
-    margin-right: auto;
-  }
-  
-  .right-footnote {
-    margin-left: auto;
-    margin-right: 10px;
-  }
+    color: rgb(145, 145, 145);
+}
+
+@media screen and (max-width: 550px) {
+    #title {
+        font-size: 28px;
+    }
+
+    #timer {
+        font-size: 20px;
+    }
+
+    .word {
+        font-size: 24px;
+    }
+
+    .tile {
+        width: 45px;
+        height: 45px;
+        margin: 1.5px;
+        font-size: 28px;
+    }
+
+    .tile.key {
+        width: 45px;
+        height: 45px;
+        margin: 1.5px;
+        font-size: 28px;
+    }
+
+    .special-key {
+        width: 150px;
+        border-radius: 10px;
+        background-color: rgb(82, 82, 82);
+        color: gainsboro;
+    }
+
+    #Enter {
+        width: 100px;
+        height: 45px;
+    }
+   
+    #gameOver {
+        font-size: medium;
+        margin: 20px;
+    }
+
+}
+
+@media (hover: hover) {
+    .tile.key:hover {
+      opacity: 0.8; 
+    }
+
+    .special-key:hover {
+        opacity: 0.8;
+    }
+
+    .rounded-button:hover, #share-results:hover {
+        opacity: 0.8;
+    }
+}
