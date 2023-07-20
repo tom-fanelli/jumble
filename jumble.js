@@ -276,6 +276,11 @@ function endGame() {
     } else {
         document.getElementById("gameOver").innerText = "Wow! You completed today's puzzle in just " + seconds + " second" + (seconds != 1 ? "s." : ".") + "\nShare your results and play again tomorrow!";
     }
+    
+    document.getElementById("fourLetterWord").innerText = '';
+    document.getElementById("fiveLetterWord").innerText = '';
+    document.getElementById("sixLetterWord").innerText = '';
+
     const start = () => {
         setTimeout(function() {
             confetti.start();

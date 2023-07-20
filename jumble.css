@@ -4,6 +4,8 @@ body {
     background-color: #161616;
     color: azure;
     overflow: hidden;
+    min-height: 100vh;
+    margin: 0;
 }
 
 hr {
@@ -291,8 +293,22 @@ p {
     margin-left: 15px; 
   }
 
-  .footnote {
+  footer {
     font-family: monospace;
-    font-size: medium;
-    margin-top: 12;
+    font-size: 14px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 25px;
+    display: flex;
+  }
+  
+  .left-footnote {
+    margin-left: 10px;
+    margin-right: auto;
+  }
+  
+  .right-footnote {
+    margin-left: auto;
+    margin-right: 10px;
   }
