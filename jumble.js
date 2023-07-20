@@ -56,22 +56,13 @@ function initialize() {
     setLetterFreq();
 
     let shuffleKey = document.getElementById("Shuffle");
-    shuffleKey.addEventListener("click", function() {
-        makeActive(shuffleKey);
-        processKeyClick();
-    });
+    shuffleKey.addEventListener("click", shuffleKeyboard);
 
     let deleteKey = document.getElementById("Backspace");
-    deleteKey.addEventListener("click", function() {
-        makeActive(deleteKey);
-        processKeyClick();
-    });
+    deleteKey.addEventListener("click", processKeyClick);
 
     let enterKey = document.getElementById("Enter");
-    enterKey.addEventListener("click", function() {
-        makeActive(enterKey);
-        processKeyClick();
-    });
+    enterKey.addEventListener("click", processKeyClick);
 
     // Listen for Key Press
     document.addEventListener("keyup", (e) => {
@@ -142,10 +133,7 @@ function generateKeyboard() {
         tile.classList.add("key");
         tile.classList.add("letter");
         tile.innerText = letters.charAt(i);
-        tile.addEventListener("click", function() {
-            makeActive(tile);
-            processKeyClick();
-        });
+        tile.addEventListener("click", processKeyClick);
         document.getElementById("keyboard-letters").appendChild(tile);
     }
 }
@@ -393,12 +381,11 @@ function updateTimer() {
     }
 }
 
-function makeActive(element) {
+function addActive(element) {
     element.classList.add('active');
     setTimeout(function() {
-        requestAnimationFrame(() => {
-            element.classList.remove('active');
-        });
+        element.classList.remove('active');
     }
-    , 50);
+    , 300);
 }
+
