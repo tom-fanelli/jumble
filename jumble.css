@@ -275,3 +275,23 @@ p {
 .show {
     display: inline;
 }
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .left-element {
+    margin-right: 15px; /* Adds a 5px gap to the right of the left element */
+  }
+  
+  .right-element {
+    margin-left: 15px; /* Adds a 5px gap to the left of the right element */
+  }
+  
+  /* Add this rule to give the share icon a slightly transparent appearance when the modal is open */
+#share-results ion-icon {
+    opacity: 0.8; /* Adjust the opacity value as desired */
+  }
+  
