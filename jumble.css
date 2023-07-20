@@ -8,6 +8,46 @@ body {
     margin: 0;
 }
 
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 12px;
+    padding-right: 12px;
+    padding-top: 10px;
+}
+
+#info-btn {
+    font-size: 24px;
+    margin-right: 10px;
+    cursor: pointer;
+    border: none;
+    text-decoration: none;
+    -webkit-user-select: none;
+    user-select: none;
+}   
+
+/* Adjust the font size and margins for the title */
+#title {
+    font-size: 36px;
+    margin: 0;
+}
+
+/* Move the timer to the right */
+#timer {
+    font-size: 30px;
+}
+
+@media screen and (max-width: 550px) {
+    #title {
+        font-size: 28px;
+    }
+
+    #timer {
+        font-size: 20px;
+    }
+}
+
 hr {
     width: 98%;
     border: 1px solid azure;
@@ -15,10 +55,7 @@ hr {
 }
 
 h1 {
-    font-size: 40px;
-    font-weight: bold;
-    letter-spacing: 2px;
-    margin-bottom: 15px;
+    
 }
 
 h2 {
@@ -27,13 +64,6 @@ h2 {
     letter-spacing: 10px;
     margin-bottom: 5px;
     margin-top: 15px;
-}
-
-#timer {
-    font-size: 36px;
-    font-weight: bold;
-    letter-spacing: 2px;
-    margin-top: 10px;
 }
 
 .slots {
@@ -229,17 +259,7 @@ p {
     transform: rotate(45deg);
     cursor: pointer;
 }
-  
-.rounded-button {
-    position: absolute;
-    top: 20px;
-    left: 25px;
-    cursor: pointer;
-    border: none;
-    text-decoration: none;
-    -webkit-user-select: none;
-    user-select: none;
-}
+
 
 .rounded-button:hover, .rounded-button:active, #share-results:hover, #share-results:active {
     opacity: 0.7;
