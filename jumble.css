@@ -3,6 +3,7 @@ body {
     text-align: center;
     background-color: #161616;
     color: azure;
+    overflow: hidden;
 }
 
 hr {
@@ -30,7 +31,7 @@ h2 {
     font-size: 36px;
     font-weight: bold;
     letter-spacing: 2px;
-    margin-top: 15px;
+    margin-top: 10px;
 }
 
 .slots {
@@ -283,15 +284,15 @@ p {
   }
   
   .left-element {
-    margin-right: 15px; /* Adds a 5px gap to the right of the left element */
+    margin-right: 15px; 
   }
   
   .right-element {
-    margin-left: 15px; /* Adds a 5px gap to the left of the right element */
+    margin-left: 15px; 
   }
-  
-  /* Add this rule to give the share icon a slightly transparent appearance when the modal is open */
-#share-results ion-icon {
-    opacity: 0.8; /* Adjust the opacity value as desired */
+
+  .footnote {
+    font-family: monospace;
+    font-size: medium;
+    margin-top: 12;
   }
-  
