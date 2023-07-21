@@ -85,7 +85,7 @@ hr {
 }
 
 .word-container.game-over {
-    padding: 0;
+    padding: 5px;
 }
 
 .actions-container {
@@ -127,6 +127,10 @@ hr {
 
 .active {
     opacity: 0.8;
+    background-color: azure;
+    color:#242424;
+    box-shadow: 5px 5px 5px rgb(82, 82, 82);
+    border-color: rgb(194, 205, 205);
 }
 
 .tile.key {
@@ -168,7 +172,7 @@ hr {
 }
 
 @keyframes makeGreen {
-    100% { border: 2.5px solid azure; background-color: rgb(100, 175, 100); } 
+    100% { border: 2.5px solid azure; background-color: rgb(100, 175, 100); color: azure; box-shadow: -4px 4px 4px rgb(154, 216, 154);} 
 }
 
 .wrong {
