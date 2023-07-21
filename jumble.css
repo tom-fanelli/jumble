@@ -110,7 +110,7 @@ hr {
     border: 2.5px solid azure;
     width: 60px;
     height: 60px;
-    margin: 3.5px;
+    margin: 4px;
     background-color: gray;
     box-shadow: -2px 3px 5px black;
 
@@ -320,7 +320,7 @@ p {
     .tile {
         width: 45px;
         height: 45px;
-        margin: 1.5px;
+        margin: 2px;
         font-size: 28px;
     }
 
@@ -331,6 +331,14 @@ p {
     #gameOver {
         font-size: medium;
         margin: 20px;
+    }
+
+    .active {
+        box-shadow: 4px 4px 4px rgb(82, 82, 82);
+    }
+
+    @keyframes makeGreen {
+        100% { border: 2.5px solid azure; background-color: rgb(100, 175, 100); color: azure; box-shadow: -3px 3px 3px rgb(154, 216, 154);} 
     }
 
 }
