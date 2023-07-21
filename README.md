@@ -1,6 +1,6 @@
 # jumble
 
-www.jumble.live
+[Play the game](https://jumble.live)
 
 This is simple browser-based game where users are met with the challenge of unscrambling 3 words: one which is four letters long, one
 which is five letters long, and one which is six letters long.
