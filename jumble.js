@@ -59,10 +59,10 @@ function initialize() {
     shuffleKey.addEventListener("click", shuffleKeyboard);
 
     let deleteKey = document.getElementById("backspace");
-    deleteKey.addEventListener("click", processKeyClick);
+    deleteKey.addEventListener("click", backspace);
 
     let enterKey = document.getElementById("enter");
-    enterKey.addEventListener("click", processKeyClick);
+    enterKey.addEventListener("click", update);
 
     // Listen for Key Press
     document.addEventListener("keyup", (e) => {
@@ -181,13 +181,7 @@ function processInput(e) {
         }
     }
     else if (e.code == "Backspace") {
-        if (0 < col && col <= row + 4) {
-            col -=1;
-            let currTile = document.getElementById(row.toString() + '-' + col.toString());
-            letterFreq.set(currTile.innerText, letterFreq.get(currTile.innerText) + 1);
-            currTile.innerText = "";
-            currTile.classList.remove("active");
-        }
+        backspace();
     }
     else if (e.code == "Enter") {
         update();
@@ -196,6 +190,17 @@ function processInput(e) {
         shuffleKeyboard();
     }
 }
+
+function backspace() {
+    if (0 < col && col <= row + 4) {
+        col -=1;
+        let currTile = document.getElementById(row.toString() + '-' + col.toString());
+        letterFreq.set(currTile.innerText, letterFreq.get(currTile.innerText) + 1);
+        currTile.innerText = "";
+        currTile.classList.remove("active");
+    }
+}
+
 
 function update() {
     let guess = "";
@@ -354,10 +359,9 @@ function copyToClipboard() {
     textarea.select();
     document.execCommand("copy");
     document.body.removeChild(textarea);
-  
     const shareButton = document.getElementById("share-results");
-    shareButton.textContent = "Copied!"; // Change the button text
-  }
+    shareButton.textContent = "Copied!";
+}
 
 function updateTimer() {
     if (seconds == 59) {
