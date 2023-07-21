@@ -55,7 +55,6 @@ hr {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    padding: 300px;
 }
 
 .keyboard-container {
@@ -73,6 +72,7 @@ hr {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    padding: 10px;
 }
 
 .word-container {
@@ -82,6 +82,10 @@ hr {
     justify-content: center;
     align-items: center;
     padding: 10px;
+}
+
+.word-container.game-over {
+    padding: 0;
 }
 
 .actions-container {
