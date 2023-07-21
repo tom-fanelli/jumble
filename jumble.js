@@ -273,7 +273,7 @@ function recordTimes() {
 
 function endGame() {
     setShareableResults();
-    document.getElementById("share-results").style.display = "flex";
+    document.getElementById("copy-btn").style.display = "flex";
     gameOver = true;
     clearInterval(timer);
     document.getElementById("keyboard").innerHTML = ""; 
@@ -359,8 +359,9 @@ function copyToClipboard() {
     textarea.select();
     document.execCommand("copy");
     document.body.removeChild(textarea);
-    const shareButton = document.getElementById("share-results");
-    shareButton.textContent = "Copied!";
+    const btn = document.getElementById("copy-btn");
+    btn.textContent = "Copied!";
+    btn.classList.add("copied");
 }
 
 function updateTimer() {

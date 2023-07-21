@@ -214,6 +214,7 @@ hr {
     justify-content: center;
     align-items: center;
     display: none;
+    z-index: 1;
 }
 
 .modal-outer {
@@ -228,6 +229,7 @@ hr {
     border-radius: 5px;
     border: 1px solid azure;
     padding: 20px; 
+    z-index: 2;
 }
 
 p {
@@ -254,20 +256,25 @@ p {
     float: right;
 }
 
-#share-results {
+#copy-btn {
     display: none;
     justify-content: center;
     align-items: center;
     margin: 0 auto;
     border-radius: 5px;
-    color: azure;
     cursor: pointer;
     width: 100px;
     height: 50px;
     text-decoration: none;
-    border: 1px solid azure;
     -webkit-user-select: none;
     user-select: none;
+    color: azure;
+    background-color: #161616;
+    border: 2px solid azure;
+}
+
+.copied {
+    opacity: 0.5;
 }
 
 .share-container {
@@ -329,7 +336,7 @@ p {
         opacity: 0.8;
     }
 
-    .rounded-button:hover, #share-results:hover {
+    .rounded-button:hover, #copy-btn:hover {
         opacity: 0.8;
     }
 }
