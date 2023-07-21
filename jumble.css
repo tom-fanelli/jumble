@@ -11,13 +11,13 @@ body {
 
 .header-container {
     display: grid;
-    grid-template-columns: 1fr auto 1fr; /* Divide the header into three equal columns */
+    grid-template-columns: 1fr auto 1fr;
     align-items: center;
     margin-top: 10px;
     padding: 0 20px;
-  }
+}
   
-  #info-btn {
+#info-btn {
     font-size: 24px;
     cursor: pointer;
     border: none;
@@ -25,19 +25,19 @@ body {
     -webkit-user-select: none;
     user-select: none;
     margin-right: auto;
-  }   
+}   
   
-  #title {
+#title {
     font-size: 36px;
     text-align: center;
     margin: 0;
-  }
+}
   
-  #timer {
+#timer {
     font-size: 30px;
     text-align: right;
-    overflow: hidden; /* Hide any overflow of the timer when it's offscreen */
-  }
+    overflow: hidden;
+}
   
 .word {
     font-size: 30px;
