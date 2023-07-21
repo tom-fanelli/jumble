@@ -10,4 +10,4 @@ There is a new jumble challenge each day at 12:00am EST.
 This game was inspired by Josh Wardle's Wordle.
 
 Built by Thomas Fanelli
-...aside from the wonderful confetti animation (source: https://gist.github.com/elrumo/3055a9163fd2d0d19f323db744b0a094)
+...aside from the wonderful confetti animation (source: [here](https://gist.github.com/elrumo/3055a9163fd2d0d19f323db744b0a094))
