@@ -55,13 +55,13 @@ function initialize() {
     generateKeyboard();
     setLetterFreq();
 
-    let shuffleKey = document.getElementById("Shuffle");
+    let shuffleKey = document.getElementById("shuffle");
     shuffleKey.addEventListener("click", shuffleKeyboard);
 
-    let deleteKey = document.getElementById("Backspace");
+    let deleteKey = document.getElementById("backspace");
     deleteKey.addEventListener("click", processKeyClick);
 
-    let enterKey = document.getElementById("Enter");
+    let enterKey = document.getElementById("enter");
     enterKey.addEventListener("click", processKeyClick);
 
     // Listen for Key Press
