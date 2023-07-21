@@ -276,6 +276,10 @@ function endGame() {
     document.getElementById("copy-btn").style.display = "flex";
     gameOver = true;
     clearInterval(timer);
+    [...document.getElementsByClassName("word-container")].forEach(container => {
+        container.classList.add("game-over");
+    });
+    
     document.getElementById("keyboard").innerHTML = ""; 
     if (minutes > 0) {
         document.getElementById("gameOver").innerText = "Well done! You completed today's puzzle in " + minutes + " minute" + (minutes > 1 ? "s" : "") + " and  " + seconds + " second" + (seconds != 1 ? "s." : ".") + "\n\nShare your results and play again tomorrow!";
