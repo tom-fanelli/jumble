@@ -357,12 +357,7 @@ function setShareableResults() {
 } 
 
 function copyToClipboard() {
-    const textarea = document.createElement("textarea");
-    textarea.value = resultsText;
-    document.body.appendChild(textarea);
-    textarea.select();
-    document.execCommand("copy");
-    document.body.removeChild(textarea);
+    navigator.clipboard.writeText(resultsText);
     const btn = document.getElementById("copy-btn");
     btn.textContent = "Copied!";
     btn.classList.add("copied");
