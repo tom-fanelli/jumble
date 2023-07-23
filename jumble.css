@@ -172,7 +172,7 @@ hr {
 }
 
 @keyframes makeGreen {
-    100% { border: 2.5px solid azure; background-color: rgb(100, 175, 100); color: azure; box-shadow: -4px 4px 4px rgb(154, 216, 154);} 
+    100% { border: 2.5px solid azure; background-color: rgb(100, 175, 100); color: azure; box-shadow: -4px 4px 4px rgb(154, 216, 154); opacity: 1;} 
 }
 
 .wrong {
@@ -303,6 +303,18 @@ p {
     font-family: monospace;
     color: rgb(145, 145, 145);
 }
+
+.blur {
+    color: transparent;
+    text-shadow: 0 0 12px #fff;
+    transition: text-shadow 0.3s ease, color 0.2s ease; 
+}
+
+.unblur {
+    text-shadow: none;
+    color: azure;
+}
+
 
 @media screen and (max-width: 550px) {
     #title {

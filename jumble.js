@@ -224,6 +224,8 @@ function update() {
         if (row >= 2) {
             endGame();
         } else {
+            if (row == 0) document.getElementById("fiveLetterWord").classList.toggle("unblur");
+            if (row == 1) document.getElementById("sixLetterWord").classList.toggle("unblur");
             row++;
             generateKeyboard();
         }
@@ -357,7 +359,7 @@ function setShareableResults() {
 } 
 
 function copyToClipboard() {
-    navigator.clipboard.writeText(resultsText);
+    navigator.clipboard.writeText(resultsText + "\n(Play at https://jumble.live)");
     const btn = document.getElementById("copy-btn");
     btn.textContent = "Copied!";
     btn.classList.add("copied");
@@ -383,13 +385,5 @@ function updateTimer() {
         clearInterval(timer);
         document.getElementById("gameOver").innerText = "Wow, you've been here for over 24 hours! Refresh the page to play again."
     }
-}
-
-function addActive(element) {
-    element.classList.add('active');
-    setTimeout(function() {
-        element.classList.remove('active');
-    }
-    , 300);
 }
 
