@@ -23,10 +23,16 @@ var seconds = 0;
 var times = [0, 0, 0, 0, 0, 0];
 var resultsText = ''
 
+var allowAnagrams = false;
+
 window.onload = function() {
     timer = setInterval(updateTimer, 1000);
     updateTimer();
     initialize();
+}
+
+function toggleAnagrams() {
+    allowAnagrams = !allowAnagrams;
 }
 
 function initialize() {
@@ -202,7 +208,7 @@ function backspace() {
 }
 
 
-function update() {
+async function update() {
     let guess = "";
 
     // concat tiles to retrieve guess string
@@ -212,32 +218,8 @@ function update() {
         guess += letter;
     }
 
-    // check guess
-    if (guess == todaysWords[row]) { // guess is correct
-        recordTimes();
-        document.getElementById(getWordId(row)).innerText = guess.toUpperCase();
-        for (let i = 0; i < col; i++) {
-            let currTile = document.getElementById(row.toString() + '-' + i.toString());
-            currTile.classList.add("correct");
-        }
-        // check for end of game
-        if (row >= 2) {
-            endGame();
-        } else {
-            if (row == 0) document.getElementById("fiveLetterWord").classList.toggle("unblur");
-            if (row == 1) document.getElementById("sixLetterWord").classList.toggle("unblur");
-            row++;
-            generateKeyboard();
-        }
-    } else if (guess.length == todaysWords[row].length) { // only animate if all tiles full
-        for (let i = 0; i < col; i++) {
-            let currTile = document.getElementById(row.toString() + '-' + i.toString());
-            currTile.classList.add("wrong");
-            currTile.addEventListener("animationend", () => {
-                currTile.classList.remove("wrong");
-            }, { once : true });
-        }
-        clearTiles();
+    if (guess.length == todaysWords[row].length) {
+        await checkGuess(guess);
     } else {
         clearTiles();
     }
@@ -245,6 +227,57 @@ function update() {
     // reset keyboard position
     col = 0;
     setLetterFreq();
+}
+
+async function checkGuess(guess) {
+    if (guess === todaysWords[row]) { 
+        processCorrectGuess(guess);
+    } else if (allowAnagrams) {
+        const url = "https://api.dictionaryapi.dev/api/v2/entries/en/" + guess.toLowerCase();
+        try {
+            const response = await fetch(url);
+            if (response.status === 200) {
+                processCorrectGuess(guess);
+            } else {
+                processIncorrectGuess();
+            }
+        } catch (error) {
+            processIncorrectGuess();
+        }
+    } else {
+        processIncorrectGuess();
+    }
+}
+
+
+function processCorrectGuess(guess) {
+    recordTimes();
+    document.getElementById(getWordId(row)).innerText = guess.toUpperCase();
+    for (let i = 0; i < col; i++) {
+        let currTile = document.getElementById(row.toString() + '-' + i.toString());
+        currTile.classList.add("correct");
+    }
+
+    // check for end of game
+    if (row >= 2) {
+        endGame();
+    } else {
+        if (row == 0) document.getElementById("fiveLetterWord").classList.toggle("unblur");
+        if (row == 1) document.getElementById("sixLetterWord").classList.toggle("unblur");
+        row++;
+        generateKeyboard();
+    }
+}
+
+function processIncorrectGuess() {
+    for (let i = 0; i < col; i++) {
+        let currTile = document.getElementById(row.toString() + '-' + i.toString());
+        currTile.classList.add("wrong");
+        currTile.addEventListener("animationend", () => {
+            currTile.classList.remove("wrong");
+        }, { once : true });
+    }
+    clearTiles();
 }
 
 function clearTiles() {
@@ -281,8 +314,9 @@ function endGame() {
     [...document.getElementsByClassName("word-container")].forEach(container => {
         container.classList.add("game-over");
     });
-    
+    document.getElementById("anagrams").style.display = "none";
     document.getElementById("keyboard").innerHTML = ""; 
+   
     if (minutes > 0) {
         document.getElementById("gameOver").innerText = "Well done! You completed today's puzzle in " + minutes + " minute" + (minutes > 1 ? "s" : "") + " and  " + seconds + " second" + (seconds != 1 ? "s." : ".") + "\n\nShare your results and play again tomorrow!";
     } else {
