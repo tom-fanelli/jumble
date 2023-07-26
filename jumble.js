@@ -48,7 +48,7 @@ function initialize() {
 
     // set words
     let millisecondsPerDay = 1000 * 60 * 60 * 24;
-    const daysSinceEpoch = Math.round(Date.now()/ millisecondsPerDay);
+    const daysSinceEpoch = Math.round(Date.now() / millisecondsPerDay);
     this.todaysFourLetterWord = fourLetterWords[(daysSinceEpoch % fourLetterWords.length)].toUpperCase();
     this.todaysFiveLetterWord = fiveLetterWords[(daysSinceEpoch % fiveLetterWords.length)].toUpperCase();
     this.todaysSixLetterWord = sixLetterWords[(daysSinceEpoch % sixLetterWords.length)].toUpperCase();
