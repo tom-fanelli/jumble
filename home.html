@@ -9,6 +9,27 @@
         <link rel='shortcut icon' href='favicon.ico' type='image/x-icon' />
     </head>
     <body>
+
+        <div id="start-page" class="modal-welcome">
+            <div class="modal-outer">
+                <div class="modal-content">
+                    <h1>Welcome to Jumble!</h1>
+                    <p>Try your best to unscramble the four-letter, five-letter, and six-letter word. </p> 
+                    <p>Feeling stuck? Try shuffling the letters by pressing SPACE (or with the shuffle icon on the keyboard)!</p>
+                    <p>By default, there is only one correct answer for each word! For an easier game, you can enable anagrams to allow for multiple correct answers.</p>
+                    <div class="switch-container-smaller">
+                        <p id="switch-label">Allow Anagrams?</p>
+                        <label class="switch">
+                            <input type="checkbox" onchange="toggleAnagrams()">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                    <button id="start-btn" class="button">Let's Play!</button>
+                    <p>A new Jumble will be available each day at 8am EDT!</p>
+                </div>
+            </div>
+        </div> 
+
         <div class="header-container">
             <a id="info-btn" class="rounded-button">
                 <ion-icon name="information-circle-outline" size="large"></ion-icon>
@@ -80,19 +101,19 @@
         <div id="anagrams" class="switch-container">
             <p id="switch-label">Allow Anagrams?</p>
             <label class="switch">
-                <input type="checkbox" onchange="toggleAnagrams()">
+                <input type="checkbox" id="anagrams-slider" onchange="toggleAnagrams()">
                 <span class="slider"></span>
             </label>
         </div>
 
-        <div class="bg-modal">
+        <div id="info" class="modal">
             <div class="modal-outer">
                 <div class="modal-content">
                     <div id="close-info" class="close">+</div>
                     <h1>How To Play:</h1>
                     <p>Try your best to unscramble the four-letter, five-letter, and six-letter word. </p> 
-                    <p>There is only one correct answer for each word, and you must complete them in order.</p>
                     <p>Feeling stuck? Try shuffling the letters by pressing SPACE (or with the shuffle icon on the keyboard)!</p>
+                    <p>By default, there is only one correct answer for each word! For an easier game, you can enable anagrams to allow for multiple correct answers.</p>
                     <p>A new Jumble will be available each day at 8am EDT!</p>
                     <p id="author"></p>
                 </div>

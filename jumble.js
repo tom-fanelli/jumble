@@ -26,9 +26,11 @@ var resultsText = ''
 var allowAnagrams = false;
 
 window.onload = function() {
-    timer = setInterval(updateTimer, 1000);
-    updateTimer();
-    initialize();
+    document.getElementById("start-btn").addEventListener("click", function () {
+        document.getElementById("start-page").style.display = "none";
+        document.getElementById("board-container").style.visibility = "visible";
+        initialize();
+    });
 }
 
 function toggleAnagrams() {
@@ -36,14 +38,21 @@ function toggleAnagrams() {
 }
 
 function initialize() {
+    if (allowAnagrams) {
+        document.getElementById("anagrams-slider").setAttribute('checked', true);
+    }
+
+    timer = setInterval(updateTimer, 1000);
+    updateTimer();
+
     document.getElementById('author').innerText = 'Made by Thomas Fanelli\n(contact: dev.jumble@gmail.com)'
 
     // set up info button
     document.getElementById("info-btn").addEventListener("click", function () {
-        document.querySelector(".bg-modal").style.display = "flex";
+        document.getElementById("info").style.display = "flex";
     })
     document.getElementById("close-info").addEventListener("click", function () {
-        document.querySelector(".bg-modal").style.display = "none";
+        document.getElementById("info").style.display = "none";
     })
 
     // set words

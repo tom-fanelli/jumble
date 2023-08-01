@@ -51,6 +51,7 @@ hr {
 }
 
 .board-container {
+    visibility: hidden;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -212,7 +213,7 @@ hr {
     100% {background-color: gray;} 
 }
 
-.bg-modal {
+.modal {
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.7);
@@ -222,6 +223,19 @@ hr {
     justify-content: center;
     align-items: center;
     display: none;
+    z-index: 1;
+}
+
+.modal-welcome{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    position: fixed;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: flex;
     z-index: 1;
 }
 
@@ -323,6 +337,13 @@ p {
     padding: 20px;
 }
 
+.switch-container-smaller {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+}
+
 #switch-label {
     margin-left: 0;
     margin-right: 15px;
@@ -376,6 +397,24 @@ input:checked + .slider:before {
     -ms-transform: translateX(26px);
     transform: translateX(26px);
 }
+
+.button {
+    background-color: rgb(100, 175, 100);
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 10px;
+    filter: drop-shadow(-5px 5px 5px rgba(0, 0, 0, 0.3));
+  }
+  .button:hover {
+    background-color: rgb(25, 175, 25);
+  }
 
 @media screen and (max-width: 550px) {
     #title {
