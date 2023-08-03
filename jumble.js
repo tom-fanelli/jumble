@@ -24,11 +24,17 @@ var times = [0, 0, 0, 0, 0, 0];
 var resultsText = ''
 
 var allowAnagrams = false;
-var darkMode = true;
+var darkMode;
 
 const colors = ['#F5F7FB', '#E5E7EA', '#CBD2D7', '#9BA5B0', '#7D8694', '#636F7B', '#54606C', '#414C58', '#343F4A', '#222933'];
 
 window.onload = function() {
+    darkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    setColors(darkMode);
+    if (darkMode) {
+        document.getElementById("display-mode-toggle").setAttribute('checked', true);
+    }
+
     document.getElementById("start-btn").addEventListener("click", function () {
         document.getElementById("start-page").style.display = "none";
         document.getElementById("board-container").style.visibility = "visible";
@@ -40,8 +46,7 @@ function toggleAnagrams() {
     allowAnagrams = !allowAnagrams;
 }
 
-function toggleDarkMode() {
-    darkMode = !darkMode;
+function setColors(darkMode) {
     if (darkMode) {
         document.documentElement.style.setProperty('--text-main', colors[1]);
         document.documentElement.style.setProperty('--text-secondary', colors[1]);
@@ -85,6 +90,11 @@ function toggleDarkMode() {
         document.documentElement.style.setProperty('--slider-bg', colors[4]);
         document.documentElement.style.setProperty('--slider-checked-alt', colors[6]); 
     }
+}
+
+function toggleDarkMode() {
+    darkMode = !darkMode;
+    setColors(darkMode);
 }
 
 function initialize() {

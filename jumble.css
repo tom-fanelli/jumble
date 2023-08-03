@@ -454,7 +454,6 @@ input:checked + .slider:before {
     margin: 4px 2px;
     cursor: pointer;
     border-radius: 10px;
-    filter: drop-shadow(-5px 5px 5px #222933);
 }  
 
 .button:hover {
