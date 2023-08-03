@@ -7,6 +7,7 @@
         <script src="jumble.js"></script>
         <script src="confetti.js"></script>
         <link rel='shortcut icon' href='favicon.ico' type='image/x-icon' />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     </head>
     <body>
 
@@ -31,9 +32,21 @@
         </div> 
 
         <div class="header-container">
-            <a id="info-btn" class="rounded-button">
-                <ion-icon name="information-circle-outline" size="large"></ion-icon>
-            </a>
+            <div id="left-header">
+                <a id="info-btn" class="rounded-button">
+                    <ion-icon name="information-circle-outline" size="large"></ion-icon>
+                </a>
+
+                <div id="display-mode" class="switch-container">
+                    <span id="light" class="material-symbols-outlined"> light_mode </span>
+                    <label class="switch">
+                        <input type="checkbox" checked id="display-mode-slider" onchange="toggleDarkMode()">
+                        <span class="slider display"></span>
+                    </label>
+                    <span id="dark" class="material-symbols-outlined"> dark_mode </span>
+                </div>
+            </div>
+            
             <h1 id="title">Jumble</h1>
             <div id="timer"></div>
         </div>

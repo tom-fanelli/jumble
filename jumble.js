@@ -24,6 +24,9 @@ var times = [0, 0, 0, 0, 0, 0];
 var resultsText = ''
 
 var allowAnagrams = false;
+var darkMode = true;
+
+const colors = ['#F5F7FB', '#E5E7EA', '#CBD2D7', '#9BA5B0', '#7D8694', '#636F7B', '#54606C', '#414C58', '#343F4A', '#222933'];
 
 window.onload = function() {
     document.getElementById("start-btn").addEventListener("click", function () {
@@ -35,6 +38,53 @@ window.onload = function() {
 
 function toggleAnagrams() {
     allowAnagrams = !allowAnagrams;
+}
+
+function toggleDarkMode() {
+    darkMode = !darkMode;
+    if (darkMode) {
+        document.documentElement.style.setProperty('--text-main', colors[1]);
+        document.documentElement.style.setProperty('--text-secondary', colors[1]);
+        document.documentElement.style.setProperty('--text-ternary', colors[3]);
+        document.documentElement.style.setProperty('--background', colors[9]);
+        document.documentElement.style.setProperty('--hr', colors[7]);
+        document.documentElement.style.setProperty('--tile-correct-border', colors[0]);
+        document.documentElement.style.setProperty('--tile-correct-text', colors[0]);
+        document.documentElement.style.setProperty('--tile-blank', colors[5]);
+        document.documentElement.style.setProperty('--tile-blank-border', colors[5]);
+        document.documentElement.style.setProperty('--tile-typing', colors[2]);
+        document.documentElement.style.setProperty('--tile-typing-border', colors[3]);
+        document.documentElement.style.setProperty('--tile-typing-text', colors[9]);
+        document.documentElement.style.setProperty('--tile-key', colors[7]);
+        document.documentElement.style.setProperty('--tile-key-border', colors[6]);
+        document.documentElement.style.setProperty('--tile-key-text', colors[0]);
+        document.documentElement.style.setProperty('--modal', colors[7]);
+        document.documentElement.style.setProperty('--modal-border', colors[1]);
+        document.documentElement.style.setProperty('--slider', colors[1]);
+        document.documentElement.style.setProperty('--slider-bg', colors[4]);
+        document.documentElement.style.setProperty('--slider-checked-alt', colors[6]);
+    } else {
+        document.documentElement.style.setProperty('--text-main', colors[9]);
+        document.documentElement.style.setProperty('--text-secondary', colors[8]);
+        document.documentElement.style.setProperty('--text-ternary', colors[5]);
+        document.documentElement.style.setProperty('--background', colors[0]);
+        document.documentElement.style.setProperty('--hr', colors[2]);
+        document.documentElement.style.setProperty('--tile-correct-border', colors[0]);
+        document.documentElement.style.setProperty('--tile-correct-text', colors[0]);
+        document.documentElement.style.setProperty('--tile-blank', colors[2]);
+        document.documentElement.style.setProperty('--tile-blank-border', colors[2]);
+        document.documentElement.style.setProperty('--tile-typing', colors[7]);
+        document.documentElement.style.setProperty('--tile-typing-border', colors[3]);
+        document.documentElement.style.setProperty('--tile-typing-text', colors[1]);
+        document.documentElement.style.setProperty('--tile-key', colors[4]);
+        document.documentElement.style.setProperty('--tile-key-border', colors[3]);
+        document.documentElement.style.setProperty('--tile-key-text', colors[0]);
+        document.documentElement.style.setProperty('--modal', colors[2]);
+        document.documentElement.style.setProperty('--modal-border', colors[5]);
+        document.documentElement.style.setProperty('--slider', colors[1]);
+        document.documentElement.style.setProperty('--slider-bg', colors[4]);
+        document.documentElement.style.setProperty('--slider-checked-alt', colors[6]); 
+    }
 }
 
 function initialize() {
