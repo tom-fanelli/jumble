@@ -38,12 +38,13 @@
                 </a>
 
                 <div id="display-mode" class="switch-container">
-                    <span id="light" class="material-symbols-outlined"> light_mode </span>
-                    <label class="switch">
-                        <input id="display-mode-toggle" type="checkbox" id="display-mode-slider" onchange="toggleDarkMode()">
-                        <span class="slider display"></span>
+                    <label id="display-mode-switch" class="switch">
+                        <input id="display-mode-toggle" type="checkbox" onchange="toggleDarkMode()">
+                        <span class="slider display">
+                            <span id="light" class="material-symbols-outlined"> light_mode </span>
+                            <span id="dark" class="material-symbols-outlined"> dark_mode </span>
+                        </span>
                     </label>
-                    <span id="dark" class="material-symbols-outlined"> dark_mode </span>
                 </div>
             </div>
             
