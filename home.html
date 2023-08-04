@@ -32,22 +32,9 @@
         </div> 
 
         <div class="header-container">
-            <div id="left-header">
-                <a id="info-btn" class="rounded-button">
-                    <ion-icon name="information-circle-outline" size="large"></ion-icon>
-                </a>
-
-                <div id="display-mode" class="switch-container">
-                    <label id="display-mode-switch" class="switch">
-                        <input id="display-mode-toggle" type="checkbox" onchange="toggleDarkMode()">
-                        <span class="slider display">
-                            <span id="light" class="material-symbols-outlined"> light_mode </span>
-                            <span id="dark" class="material-symbols-outlined"> dark_mode </span>
-                        </span>
-                    </label>
-                </div>
-            </div>
-            
+            <a id="info-btn" class="rounded-button">
+                <ion-icon name="information-circle-outline" size="large"></ion-icon>
+            </a>
             <h1 id="title">Jumble</h1>
             <div id="timer"></div>
         </div>
@@ -130,6 +117,14 @@
                     <p>By default, there is only one correct answer for each word! For an easier game, you can enable anagrams to allow for multiple correct answers.</p>
                     <p>A new Jumble will be available each day at 8am EDT!</p>
                     <p id="author"></p>
+                    <div id="display-mode" class="switch-container">
+                        <span id="light" class="material-symbols-outlined"> light_mode </span>
+                        <label class="switch">
+                            <input id="display-mode-toggle" type="checkbox" id="display-mode-slider" onchange="toggleDarkMode()">
+                            <span class="slider display"></span>
+                        </label>
+                        <span id="dark" class="material-symbols-outlined"> dark_mode </span>
+                    </div>
                 </div>
             </div>
         </div> 
