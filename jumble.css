@@ -68,12 +68,11 @@ body {
     text-decoration: none;
     -webkit-user-select: none;
     user-select: none;
-    margin-right: 50px;
+    margin-right: 5%;
     margin-top: 2px;
 }   
 
 #left-header {
-    margin-right: auto;
     display: flex;
 }
   
