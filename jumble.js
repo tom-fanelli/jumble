@@ -102,6 +102,10 @@ function initialize() {
         document.getElementById("anagrams-slider").setAttribute('checked', true);
     }
 
+    if (darkMode) {
+        document.getElementById("display-mode-toggle-2").setAttribute('checked', true);
+    }
+
     timer = setInterval(updateTimer, 1000);
     updateTimer();
 

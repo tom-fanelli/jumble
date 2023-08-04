@@ -25,6 +25,14 @@
                             <span class="slider"></span>
                         </label>
                     </div>
+                    <div id="display-mode" class="switch-container">
+                        <span id="light" class="material-symbols-outlined"> light_mode </span>
+                        <label class="switch">
+                            <input id="display-mode-toggle" type="checkbox" id="display-mode-slider" onchange="toggleDarkMode()">
+                            <span class="slider display"></span>
+                        </label>
+                        <span id="dark" class="material-symbols-outlined"> dark_mode </span>
+                    </div>
                     <button id="start-btn" class="button">Play!</button>
                     <p>A new Jumble will be available each day at 8am EDT!</p>
                 </div>
@@ -120,7 +128,7 @@
                     <div id="display-mode" class="switch-container">
                         <span id="light" class="material-symbols-outlined"> light_mode </span>
                         <label class="switch">
-                            <input id="display-mode-toggle" type="checkbox" id="display-mode-slider" onchange="toggleDarkMode()">
+                            <input id="display-mode-toggle-2" type="checkbox" onchange="toggleDarkMode()">
                             <span class="slider display"></span>
                         </label>
                         <span id="dark" class="material-symbols-outlined"> dark_mode </span>
