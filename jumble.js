@@ -26,6 +26,10 @@ var resultsText = ''
 var allowAnagrams = false;
 var darkMode;
 
+var hardmode4 = '';
+var hardmode5 = '';
+var hardmode6 = '';
+
 const colors = ['#F5F7FB', '#E5E7EA', '#CBD2D7', '#9BA5B0', '#7D8694', '#636F7B', '#54606C', '#414C58', '#343F4A', '#222933'];
 
 window.onload = function() {
@@ -336,10 +340,16 @@ function processCorrectGuess(guess) {
 
     // check for end of game
     if (row >= 2) {
+        if (allowAnagrams) hardmode6 = ' ⭐️';
         endGame();
     } else {
-        if (row == 0) document.getElementById("fiveLetterWord").classList.toggle("unblur");
-        if (row == 1) document.getElementById("sixLetterWord").classList.toggle("unblur");
+        if (row == 0) {
+            document.getElementById("fiveLetterWord").classList.toggle("unblur");
+            if (allowAnagrams) hardmode4 = ' ⭐️';
+        } else if (row == 1) {
+            document.getElementById("sixLetterWord").classList.toggle("unblur");
+            if (allowAnagrams) hardmode5 = ' ⭐️';
+        }
         row++;
         generateKeyboard();
     }
@@ -461,9 +471,9 @@ function setShareableResults() {
     }
 
     resultsText = "🏆 " + month + " " + day + ", " + year + " 🏆\n" + 
-    "4️⃣ " + times[0] + ":" + ("0" + times[1]).slice(-2) + "\n" + 
-    "5️⃣ " + times[2] + ":" + ("0" + times[3]).slice(-2) + "\n" +
-    "6️⃣ " + times[4] + ":" + ("0" + times[5]).slice(-2) + "\n" +
+    "4️⃣ " + times[0] + ":" + ("0" + times[1]).slice(-2) + hardmode4 + "\n" + 
+    "5️⃣ " + times[2] + ":" + ("0" + times[3]).slice(-2) + hardmode5 + "\n" +
+    "6️⃣ " + times[4] + ":" + ("0" + times[5]).slice(-2) + hardmode6 + "\n" +
     "🏁 " + minutes + ":" + ("0" + seconds).slice(-2) + "\n" + "#jumble";
     document.getElementById("results").innerText = resultsText;
 } 

@@ -17,14 +17,15 @@
                     <h1>Welcome to Jumble!</h1>
                     <p>Try your best to unscramble the four-letter, five-letter, and six-letter word. </p> 
                     <p>Feeling stuck? Try shuffling the letters by pressing SPACE (or with the shuffle icon on the keyboard)!</p>
-                    <p>By default, there is only one correct answer for each word! For an easier game, you can enable anagrams to allow for multiple correct answers.</p>
+                    <p>Every Jumble has a predetermined correct answer, but anagrams are also accepted. On Hard Mode, only <b>one</b> answer is correct.</p> 
                     <div class="switch-container-smaller">
-                        <p id="switch-label">Allow Anagrams?</p>
+                        <p id="switch-label">Hard Mode?</p>
                         <label class="switch">
                             <input type="checkbox" onchange="toggleAnagrams()">
                             <span class="slider"></span>
                         </label>
                     </div>
+
                     <div id="display-mode" class="switch-container">
                         <span id="light" class="material-symbols-outlined"> light_mode </span>
                         <label class="switch">
@@ -108,7 +109,7 @@
         </div> 
 
         <div id="anagrams" class="switch-container">
-            <p id="switch-label">Allow Anagrams?</p>
+            <p id="switch-label">Hard Mode?</p>
             <label class="switch">
                 <input type="checkbox" id="anagrams-slider" onchange="toggleAnagrams()">
                 <span class="slider"></span>
@@ -122,7 +123,7 @@
                     <h1>How To Play:</h1>
                     <p>Try your best to unscramble the four-letter, five-letter, and six-letter word. </p> 
                     <p>Feeling stuck? Try shuffling the letters by pressing SPACE (or with the shuffle icon on the keyboard)!</p>
-                    <p>By default, there is only one correct answer for each word! For an easier game, you can enable anagrams to allow for multiple correct answers.</p>
+                    <p>Every Jumble has a predetermined correct answer, but anagrams are also accepted. On Hard Mode, only <b>one</b> answer is correct.</p>
                     <p>A new Jumble will be available each day at midnight eastern!</p>
                     <p id="author"></p>
                     <div id="display-mode" class="switch-container">
