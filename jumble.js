@@ -120,8 +120,10 @@ function initialize() {
     })
 
     // set words
-    let millisecondsPerDay = 1000 * 60 * 60 * 24;
-    const daysSinceEpoch = Math.round(Date.now() / millisecondsPerDay);
+    let millisecondsPerHour = 1000 * 60 * 60;
+    let millisecondsPerDay = millisecondsPerHour * 24;
+    // adding 8 hours to enforce change at midnight eastern time
+    const daysSinceEpoch = Math.round((Date.now() + 8 * millisecondsPerHour) / millisecondsPerDay);
     this.todaysFourLetterWord = fourLetterWords[(daysSinceEpoch % fourLetterWords.length)].toUpperCase();
     this.todaysFiveLetterWord = fiveLetterWords[(daysSinceEpoch % fiveLetterWords.length)].toUpperCase();
     this.todaysSixLetterWord = sixLetterWords[(daysSinceEpoch % sixLetterWords.length)].toUpperCase();
