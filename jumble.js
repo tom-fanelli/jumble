@@ -70,8 +70,7 @@ function setColors(darkMode) {
         document.documentElement.style.setProperty('--modal', colors[7]);
         document.documentElement.style.setProperty('--modal-border', colors[1]);
         document.documentElement.style.setProperty('--slider', colors[1]);
-        document.documentElement.style.setProperty('--slider-bg', colors[4]);
-        document.documentElement.style.setProperty('--slider-checked-alt', colors[6]);
+        document.documentElement.style.setProperty('--slider-bg', colors[6]);
     } else {
         document.documentElement.style.setProperty('--text-main', colors[9]);
         document.documentElement.style.setProperty('--text-secondary', colors[8]);
@@ -91,8 +90,7 @@ function setColors(darkMode) {
         document.documentElement.style.setProperty('--modal', colors[2]);
         document.documentElement.style.setProperty('--modal-border', colors[5]);
         document.documentElement.style.setProperty('--slider', colors[1]);
-        document.documentElement.style.setProperty('--slider-bg', colors[4]);
-        document.documentElement.style.setProperty('--slider-checked-alt', colors[6]); 
+        document.documentElement.style.setProperty('--slider-bg', colors[6]);
     }
 }
 

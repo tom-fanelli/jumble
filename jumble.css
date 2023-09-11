@@ -17,8 +17,7 @@
     --modal: #414C58;
     --modal-border: #E5E7EA;
     --slider: #E5E7EA;
-    --slider-bg: #7D8694;
-    --slider-checked-alt: #54606C;
+    --slider-bg: #54606C;
     --green: #64AF64;
     --green-secondary: #69B869;
     --red: #E64646;
@@ -427,7 +426,7 @@ input:checked + .slider {
 }
 
 input:checked + .slider.display {
-    background-color: var(--slider-checked-alt);
+    background-color: var(--slider-bg);
 }
   
 input:checked + .slider:before {
