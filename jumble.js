@@ -23,7 +23,7 @@ var seconds = 0;
 var times = [0, 0, 0, 0, 0, 0];
 var resultsText = ''
 
-var allowAnagrams = false;
+var allowAnagrams = true;
 var darkMode;
 
 var hardmode4 = '';
@@ -100,7 +100,7 @@ function toggleDarkMode() {
 }
 
 function initialize() {
-    if (allowAnagrams) {
+    if (!allowAnagrams) {
         document.getElementById("anagrams-slider").setAttribute('checked', true);
     }
 
@@ -338,15 +338,15 @@ function processCorrectGuess(guess) {
 
     // check for end of game
     if (row >= 2) {
-        if (allowAnagrams) hardmode6 = ' ⭐️';
+        if (!allowAnagrams) hardmode6 = ' ⭐️';
         endGame();
     } else {
         if (row == 0) {
             document.getElementById("fiveLetterWord").classList.toggle("unblur");
-            if (allowAnagrams) hardmode4 = ' ⭐️';
+            if (!allowAnagrams) hardmode4 = ' ⭐️';
         } else if (row == 1) {
             document.getElementById("sixLetterWord").classList.toggle("unblur");
-            if (allowAnagrams) hardmode5 = ' ⭐️';
+            if (!allowAnagrams) hardmode5 = ' ⭐️';
         }
         row++;
         generateKeyboard();
